@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utilities.Log;
+import utilities.Utility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,12 @@ public class Home_Page {
 
         element = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#accountNavigationRoot > div > ul > li.login-register-button-container")));
         return element;
+
+    }
+    public static WebElement tab (String id) {
+
+         Utility.scrollToView(wait.until(ExpectedConditions.presenceOfElementLocated(By.id(id))));
+         return driver.findElement(By.id(id));
 
     }
 

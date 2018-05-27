@@ -32,12 +32,11 @@ public class Home {
 
 
     public static void openTab(String id) {
-        WebElement tab = driver.findElement(By.id(id));
-        Utility.scrollToView(tab);
+        WebElement tab = Home_Page.tab(id);
         String tabName = tab.getText();
         tab.click();
         Log.info(id + ": " + tabName + " tab is opened");
-        tab = driver.findElement(By.id(id));
+        tab = Home_Page.tab(id);
         Assert.assertTrue(tab.getAttribute("class").contains("hoverColor"), "Sayfa gecisinde problem: Gecilen kategori ismi secili(hover) renge sahip degil.");
     }
 
